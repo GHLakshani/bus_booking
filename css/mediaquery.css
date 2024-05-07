@@ -1,0 +1,499 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1920px) {
+
+
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1536px) {
+
+	.login_section_div{
+	    padding-top: 100px;
+	}
+
+	.login_div{
+	    padding-left: 90px !important;
+	    padding-right: 90px !important;
+	}
+
+	.tab_button img{
+		margin-top: 5px;
+	    width: 40px;
+	    height: 40px;
+	}
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1366px) {
+
+	.login_section_div{
+	    padding-top: 50px;
+	}
+
+	.login_div{
+	    padding-left: 50px !important;
+	    padding-right: 50px !important;
+	}
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1280px) {
+
+	
+}
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1199px) {
+
+	.new_top_logo {
+	    width: 170px;
+	}
+
+	.count_div h3 {
+	    font-size: 11px;
+	}
+
+	.info_button_col p {
+	    font-size: 12px;
+	}
+
+	.poll_result_name_box {
+	    margin-left: 15px;
+	}
+
+	.tab_button p {
+	    margin-bottom: 0px;
+	    font-size: 11px;
+	}
+
+	.tab_button img {
+	    margin-top: 5px;
+	    width: 32px;
+	    height: 32px;
+	}
+
+}
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1024px) {
+
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 991px) {
+
+	.navbar-light .container-fluid{
+		padding-left: 10px !important;
+		padding-right: 10px !important;
+	}
+
+	.navbar-nav {
+	    text-align: center;
+	}
+
+	.home_search_col{
+		margin-top: 30px !important;
+	}
+
+	.info_button_col img {
+	    width: 45px;
+	    float: inherit;
+	    margin-right: 10px;
+	}
+
+	.poll_section_div {
+	    margin-top: 30px;
+	    position: relative;
+	    z-index: 9;
+	}
+
+	.online_polls_con {
+	    margin-top: 0px;
+	}
+
+	.polls_jar_div{
+		padding-bottom: 50px !important;
+	}
+
+	.last_update {
+	    text-align: left;
+	    margin-top: 15px;
+	}
+
+	.bg_row {
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	    background-position: center left;
+	}
+
+	#jarallax-container-0 {
+	    display: none !important;
+	}
+
+	#jarallax-container-1 {
+	    display: none !important;
+	}
+
+	.top_btn_set_div .blue_white_btn {
+	    font-size: 10px;
+	    padding: 3px 20px;
+	}
+
+	.top_btn_set_div .blue_btn {
+	    font-size: 10px;
+	    padding: 3px 20px;
+	}
+
+	.top_logo_row {
+	    padding-top: 5px;
+	    padding-bottom: 5px;
+	}
+
+	.detail_page_next_stage img{
+		float: left !important;
+	}
+
+	#recom_proposals{
+		margin-top: 50px;
+	}
+
+	#recom_proposals .p-4{
+		padding: 10px 10px !important;
+	}
+
+	.update_detail_slider {
+	    margin-right: 0px;
+	    margin-bottom: 30px;
+	}
+
+	.nav-pills .nav-link {
+	    font-size: 13px;
+	    height: 45px;
+	}
+
+	.nav-pills{
+		margin-bottom: 40px;
+	}
+
+	.mp_profile_tab{
+		width: 100% !important;
+	}
+
+	.tab_button p {
+	    margin-bottom: 0px;
+	    font-size: 11px;
+	    line-height: 17px;
+	}
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 768px) {
+
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 767px) {
+
+	.login_div {
+	    padding-left: 20px !important;
+	    padding-right: 20px !important;
+	    margin-bottom: 30px !important;
+	}
+
+	.top_btn_set_div{
+		text-align: right;
+    	display: block !important;
+	}
+
+	.color_box {
+	    width: 22px;
+	    height: 20px;
+	    float: left;
+	    margin-right: 5px;
+	    border-radius: 5px;
+	}
+
+	.breadcrumb p {
+	    font-size: 11px;
+	}
+
+	.count_div img{
+		width: 30px !important;
+		margin-bottom: 5px !important;
+	}
+
+	.count_div .heading{
+		font-size: 17px;
+	}
+
+	.login_pop_row {
+	    padding-right: 20px;
+	    padding-left: 20px;
+	    padding-top: 20px;
+	    padding-bottom: 20px;
+	}
+
+	.inner_top_search_col .inner_search_col_btn {
+	    border-radius: 5px !important;
+	    height: 45px !important;
+	}
+
+	.pad_rig_5 {
+	    padding-right: 15px;
+	}
+/*
+	.login_div{
+		padding-top: 0px;
+	}
+
+	.p_reset_img{
+		width: 200px;
+		margin-bottom: 20px;
+	}
+*/
+	.otp_form {
+	    display: block;
+	    width: 100%;
+	    padding: 5px;
+	    font-size: 14px;
+	    height: 40px;
+	    font-weight: 400;
+	    line-height: 1.5;
+	    color: #212529;
+	    background-color: #fff;
+	    background-clip: padding-box;
+	    border: 1px solid #ced4da;
+	    -webkit-appearance: none;
+	    -moz-appearance: none;
+	    appearance: none;
+	    border-radius: 0.25rem;
+	    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	}
+
+	.profile_section .nav-pills {
+	    margin-bottom: 40px;
+	    margin-right: 0px !important;
+	}
+
+	.profile_section .nav-tabs {
+	    border-bottom: none;
+	    padding-left: 15px;
+	    padding-right: 30px;
+	}
+
+	.profile_section .nav-tabs .nav-link {
+	    width: 100% !important;
+	    border-right: 3px solid #ffffff !important;
+	    padding: 10px !important;
+	}
+
+
+}
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 575px) {
+
+	.login_pop_row {
+	    padding-right: 0px;
+	    padding-left: 0px;
+	    padding-top: 0px;
+	    padding-bottom: 0px;
+	}
+
+	.navbar-light .container-fluid{
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+	}
+
+	.login_body .logo_text {
+	    font-size: 20px;
+	    margin-bottom: 0px;
+	    color: #002367;
+	}
+
+	.login_body .logo_text_p {
+	    font-size: 11px;
+	    font-weight: 600;
+	    margin-bottom: 0px;
+	} 
+
+	.login_logo_div{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	.heading {
+	    font-size: 18px;
+	}
+
+	p {
+	    font-size: 13px;
+	    line-height: 19px;
+	}
+
+	.sub_heading {
+	    font-size: 15px;
+	}
+
+	.info_button_col {
+	    flex: inherit;
+	    width: 50%;
+	    border-bottom: 1px solid #ffffff;
+	}
+
+	.info_button_col img {
+	    width: 30px;
+	    float: left;
+	    margin-right: 5px;
+	    top: 4px;
+    	position: relative;
+	}
+
+	.info_button_col {
+	    border-right: 1px solid #ffffff;
+	    padding: 7px 7px;
+	}
+
+	.owl-carousel .owl-item img {
+	    display: block;
+	    width: 80% !important;
+	}
+
+	.contact_form_div {
+	    position: relative;
+	    z-index: 99;
+	    margin-top: -60px;
+	    padding: 20px 10px !important;
+	}
+
+	.slider-card {
+	    background: #fff;
+	    padding: 0px 0px;
+	    margin: 5px !important;
+	}
+
+	.recom_div .heading {
+	    font-size: 16px;
+	    text-transform: capitalize;
+	    font-weight: 600;
+	}
+
+	.breadcrumb-item{
+		font-size: 11px;
+	}
+
+	.breadcrumb-item+.breadcrumb-item {
+	    padding-left: 0px;
+	    margin-bottom: 5px;
+	}
+
+	.like_set .breadcrumb-item {
+	    width: 120px;
+	}
+
+	.partner_div p{
+		display: none;
+	}
+
+	.partner_div{
+		padding: 5px !important;
+		margin-bottom: 0px !important;
+	}
+
+	.dark_blue_btn {
+	    font-size: 11px;
+	    height: auto !important;
+	}
+
+	.breadcrumb-item+.breadcrumb-item::before {
+	    float: left;
+	    padding-right: 0.5rem;
+	    color: #6c757d;
+	    content: var(--bs-breadcrumb-divider, "") !important;
+	}
+
+	.parties_li .breadcrumb-item{
+		margin-right: 10px;
+	}
+
+	.progress_circle .progress-value {
+	    font-size: 12px; 
+	    color: #000;
+	    line-height: 46px;
+	}
+
+	.progress_circle {
+	    width: 50px;
+	    height: 50px;
+	}
+
+	.poll_result_name_box {
+	    margin-left: 0px;
+	}
+
+	.footer_follow_sec{
+		margin-bottom: 15px;
+	}
+
+	.detail_page_next_stage{
+		width: 100% !important;
+	}
+
+	.profile_section .nav-link {
+	    display: block;
+	    padding: 10px 5px;
+	}
+
+	.profile_section .tab_button img {
+	    display: none;
+	}
+
+	.nav-tabs .nav-link {
+	    padding: 5px !important;
+	}
+	
+}
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+	
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 375px) {
+
+
+
+}
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 360px) {
+
+
+
+}
+
+
+@media only screen and (max-width : 320px) {
+
+
+
+}

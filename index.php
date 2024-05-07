@@ -146,12 +146,12 @@
 
                 <h2 class="sub_heading"><img src="images/search.png" alt="" width="30px;" data-aos="fade-up"> SEARCH</h2>
                 <div class="clearfix"></div>
-
+                <form action="search_result.php" method="POST">
                 <div class="row">
                   
                   <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
                     <div class="form-floating mb-3">
-                      <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                      <select class="form-select" id="route_from" name="route_from" aria-label="Floating label select example" required>
                         <option selected>Colombo</option>
                         <option value="1">Kandy</option>
                         <option value="2">Galle</option>
@@ -163,7 +163,7 @@
 
                   <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
                     <div class="form-floating mb-3">
-                      <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                      <select class="form-select" id="route_to" name="route_to" aria-label="Floating label select example" required>
                         <option selected>Kandy</option>
                         <option value="1">Kandy</option>
                         <option value="2">Galle</option>
@@ -175,10 +175,11 @@
 
                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
                     <div class="form-floating mb-3">
-                      <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
-                        <option selected>AC</option>
-                        <option value="1">AC</option>
-                        <option value="1">Normal</option>
+                      <select class="form-select" id="bus_type" name="bus_type" aria-label="Floating label select example" required>
+                        <option value="Normal Bus">Normal Bus</option>
+                        <option value="AC Bus">AC Bus</option>
+                        <option value="Semi">Semi</option>
+                        <option value="Highway">Highway</option>
                       </select>
                       <label for="floatingSelectGrid">Bus Type</label>
                     </div>
@@ -186,7 +187,7 @@
 
                   <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
                     <div class="form-floating mb-3">
-                      <input type="Date" class="form-control" id="floatingInput" placeholder="name@example.com">
+                      <input type="Date" class="form-control" id="date" name="date" placeholder="name@example.com" required>
                       <label for="floatingInput">Date</label>
                     </div>
                   </div>
@@ -194,9 +195,9 @@
                    <div class="clearfix"></div>
 
                   <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12 m-auto">
-                    <a href="search_result.php">
-                      <button type="button" class="btn btn-primary green_btn mb-3" style="width: 100%; height: 55px;">SEARCH NOW</button>
-                    </a>
+                    <!-- <a href="search_result.php"> -->
+                    <button type="submit" class="btn btn-primary green_btn mb-3" style="width: 100%; height: 55px;">SEARCH NOW</button>
+                    <!-- </a> -->
                   </div>
 
                 </div>
@@ -211,7 +212,7 @@
             <!-- search section -->
 
 
-            
+
           </div>
 
         </div>

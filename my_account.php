@@ -305,7 +305,7 @@ $conn = null;
 
             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-2">
               <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="<?php echo $province; ?>">
+                <!-- <input type="text" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="<?php echo $province; ?>"> -->
                 <select class="form-select" id="province" name="province" aria-label="Floating label select example">
                   <option selected>Choose a province</option>
                   <option value="Western">Western</option>
@@ -324,7 +324,7 @@ $conn = null;
 
             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-2">
               <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="<?php echo $district; ?>">
+                <!-- <input type="text" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="<?php echo $district; ?>"> -->
                 <select class="form-select" id="district" name="district" aria-label="Floating label select example">
                   <option selected>Choose a district</option>
                   <option value="Colombo">Colombo</option>

@@ -179,7 +179,7 @@
             <p class="mb-1">Bus Schedule ID. - WLP21-2200-PW</p> 
             <p class="mb-1">Depot Name - Walapane</p> 
             <h1 class="heading mb-1" data-aos="fade-up">Rs. 924.50 / <b style="font-size: 20px; color: red;">Available Seats 30</b></h1>
-            <a href="seat_booking.html" class="a_link">BOOK SEAT <img src="images/arrow.png"></a>
+            <a href="seat_booking.php" class="a_link">BOOK SEAT <img src="images/arrow.png"></a>
            </div> 
 
          </div>
@@ -207,7 +207,7 @@
             <p class="mb-1">Bus Schedule ID. - WLP21-2200-PW</p> 
             <p class="mb-1">Depot Name - Walapane</p> 
             <h1 class="heading mb-1" data-aos="fade-up">Rs. 924.50 / <b style="font-size: 20px; color: red;">Available Seats 30</b></h1>
-            <a href="seat_booking.html" class="a_link">BOOK SEAT <img src="images/arrow.png"></a>
+            <a href="seat_booking.php" class="a_link">BOOK SEAT <img src="images/arrow.png"></a>
            </div> 
 
          </div>
@@ -234,7 +234,7 @@
             <p class="mb-1">Bus Schedule ID. - WLP21-2200-PW</p> 
             <p class="mb-1">Depot Name - Walapane</p> 
             <h1 class="heading mb-1" data-aos="fade-up">Rs. 924.50 / <b style="font-size: 20px; color: red;">Available Seats 30</b></h1>
-            <a href="seat_booking.html" class="a_link">BOOK SEAT <img src="images/arrow.png"></a>
+            <a href="seat_booking.php" class="a_link">BOOK SEAT <img src="images/arrow.png"></a>
            </div> 
 
          </div>
@@ -261,7 +261,7 @@
             <p class="mb-1">Bus Schedule ID. - WLP21-2200-PW</p> 
             <p class="mb-1">Depot Name - Walapane</p> 
             <h1 class="heading mb-1" data-aos="fade-up">Rs. 924.50 / <b style="font-size: 20px; color: red;">Available Seats 30</b></h1>
-            <a href="seat_booking.html" class="a_link">BOOK SEAT <img src="images/arrow.png"></a>
+            <a href="seat_booking.php" class="a_link">BOOK SEAT <img src="images/arrow.png"></a>
            </div> 
 
          </div>
@@ -288,7 +288,7 @@
             <p class="mb-1">Bus Schedule ID. - WLP21-2200-PW</p> 
             <p class="mb-1">Depot Name - Walapane</p> 
             <h1 class="heading mb-1" data-aos="fade-up">Rs. 924.50 / <b style="font-size: 20px; color: red;">Available Seats 30</b></h1>
-            <a href="seat_booking.html" class="a_link">BOOK SEAT <img src="images/arrow.png"></a>
+            <a href="seat_booking.php" class="a_link">BOOK SEAT <img src="images/arrow.png"></a>
            </div> 
 
          </div>

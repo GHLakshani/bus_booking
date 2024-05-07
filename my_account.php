@@ -227,7 +227,7 @@ $conn = null;
           <!-- ============== -->
 
 
-          <a href="all_bookings.html">
+          <a href="all_bookings.php">
             <div class="left_side_btn_div">
               My Bookings
             </div>

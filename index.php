@@ -194,7 +194,7 @@
                    <div class="clearfix"></div>
 
                   <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12 m-auto">
-                    <a href="search_result.html">
+                    <a href="search_result.php">
                       <button type="button" class="btn btn-primary green_btn mb-3" style="width: 100%; height: 55px;">SEARCH NOW</button>
                     </a>
                   </div>
@@ -211,6 +211,7 @@
             <!-- search section -->
 
 
+            
           </div>
 
         </div>

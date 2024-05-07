@@ -9,6 +9,46 @@ global $conn;
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Image upload handling
+  $target_dir = "uploads/"; // Directory where you want to store the uploaded images
+  $target_file = $target_dir . basename($_FILES["bus_image"]["name"]);
+  $uploadOk = 1;
+  $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+  // Check if image file is a actual image or fake image
+  $check = getimagesize($_FILES["bus_image"]["tmp_name"]);
+  if($check !== false) {
+      echo "File is an image - " . $check["mime"] . ".";
+      $uploadOk = 1;
+  } else {
+      echo "File is not an image.";
+      $uploadOk = 0;
+  }
+
+  // Check file size
+  if ($_FILES["bus_image"]["size"] > 500000) {
+      echo "Sorry, your file is too large.";
+      $uploadOk = 0;
+  }
+
+  // Allow certain file formats
+  if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+  && $imageFileType != "gif" ) {
+      echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+      $uploadOk = 0;
+  }
+
+  // Check if $uploadOk is set to 0 by an error
+  if ($uploadOk == 0) {
+      echo "Sorry, your file was not uploaded.";
+  // if everything is ok, try to upload file
+  } else {
+      if (move_uploaded_file($_FILES["bus_image"]["tmp_name"], $target_file)) {
+          echo "The file ". htmlspecialchars( basename( $_FILES["bus_image"]["name"])). " has been uploaded.";
+      } else {
+          echo "Sorry, there was an error uploading your file.";
+      }
+  }
     // Escape user inputs for security
     $schedule_id = mysqli_real_escape_string($conn, $_POST['schedule_id']);
     $route_from = mysqli_real_escape_string($conn, $_POST['route_from']);
@@ -21,13 +61,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $duration = mysqli_real_escape_string($conn, $_POST['duration']);
     $bus_type = mysqli_real_escape_string($conn, $_POST['bus_type']);
     $schedule_date = mysqli_real_escape_string($conn, $_POST['schedule_date']);
+    $image = mysqli_real_escape_string($conn, $_POST['bus_image']);
 
     // Insert data into database
-    $sql = "INSERT INTO bus_schedule (schedule_id, route_from, route_to, departure_time, bus_model, depot_name, fare, available_seats, duration, bus_type, schedule_date) 
-            VALUES ('$schedule_id', '$route_from', '$route_to', '$departure_time', '$bus_model', '$depot_name', '$fare', '$available_seats', '$duration', '$bus_type', '$schedule_date')";
+    $sql = "INSERT INTO bus_schedule (schedule_id, route_from, route_to, departure_time, bus_model, depot_name, fare, available_seats, duration, bus_type, schedule_date,bus_image) 
+            VALUES ('$schedule_id', '$route_from', '$route_to', '$departure_time', '$bus_model', '$depot_name', '$fare', '$available_seats', '$duration', '$bus_type', '$schedule_date','$bus_image')";
 
     if ($conn->query($sql) === TRUE) {
-      header("Location: thank.php");
+      // Display a success message using JavaScript
+      echo "<script>alert('Booking successful!');</script>";
+      // header("Location: thank.php");
       exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
@@ -288,6 +331,13 @@ $conn->close();
                     <div class="form-floating mb-3" data-aos="fade-up">
                       <input type="date" class="form-control" id="schedule_date" name="schedule_date" placeholder="name@example.com">
                       <label for="floatingInput">Schedule Date</label>
+                    </div>
+                  </div>
+
+                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-floating mb-3" data-aos="fade-up">
+                      <input type="file" class="form-control" id="bus_image" name="bus_image" placeholder="name@example.com">
+                      <label for="floatingInput">Image</label>
                     </div>
                   </div>
                 

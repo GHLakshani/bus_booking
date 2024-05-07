@@ -1,3 +1,27 @@
+<?php
+
+  // Start the session
+  session_start();
+
+  // Include the connection file
+  include 'connection.php';
+
+  global $conn;
+
+  $id = $_GET['id'];
+
+  // Perform a SELECT query to fetch the bus details based on the schedule ID
+  $query = "SELECT * FROM bus_schedule WHERE id = $id";
+  $stmt = $conn->prepare($query);
+  $stmt->execute();    
+
+   // Fetch user details
+  $row = $stmt->get_result()->fetch_assoc();
+
+  // var_dump($bus_details);exit();
+
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -172,13 +196,13 @@
 
          <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5">
            <div class="rounded shadow p-4" style="background-color: #eeeeee;">
-            <p class="fst-italic mb-1">Duration : 04:00 Hours  |  Normal Bus  |  2024-05-08</p>
-            <h1 class="sub_heading mb-3">COLOMBO to KANDY</h1>
-            <p class="mb-1">Time - 22:00</p>
-            <p class="mb-1">Model - Ashok Leyland</p>
-            <p class="mb-1">Bus Schedule ID. - WLP21-2200-PW</p> 
-            <p class="mb-1">Depot Name - Walapane</p> 
-            <h1 class="heading mb-1" data-aos="fade-up">Rs. 924.50 / <b style="font-size: 20px; color: red;">Available Seats 30</b></h1>
+              <p class="fst-italic mb-1">Duration : <?php echo $row['duration']; ?> Hours | <?php echo $row['bus_type']; ?> | <?php echo $row['schedule_date']; ?></p>
+              <h1 class="sub_heading mb-3"><?php echo $row['route_from']; ?> to <?php echo $row['route_to']; ?></h1>
+              <p class="mb-1">Time - <?php echo $row['departure_time']; ?></p>
+              <p class="mb-1">Model - <?php echo $row['bus_model']; ?></p>
+              <p class="mb-1">Bus Schedule ID. - <?php echo $row['schedule_id']; ?></p>
+              <p class="mb-1">Depot Name - <?php echo $row['depot_name']; ?></p>
+              <h1 class="heading mb-1" data-aos="fade-up">Rs. <?php echo $row['fare']; ?> / <b style="font-size: 20px; color: red;">Available Seats <?php echo $row['available_seats']; ?></b></h1>
            </div> 
 
          </div>
@@ -220,11 +244,11 @@
         <div style="width: 75px;"><img src="images/steering-wheel.png" width="60px" class="float-start"></div>
 
         <div class="main_seat_row">
-         <div class="bus_seat_row_3">
-           <div class="bus_seat booked_seat"><input type="checkbox"/> 01</div>
-           <div class="bus_seat"><input type="checkbox"/> 02</div>
-           <div class="bus_seat"><input type="checkbox"/> 03</div>
-         </div>
+          <div class="bus_seat_row_3">
+            <div class="bus_seat booked_seat"><input type="checkbox"/> 01</div>
+            <div class="bus_seat"><input type="checkbox"/> 02</div>
+            <div class="bus_seat"><input type="checkbox"/> 03</div>
+          </div>
 
          <div class="bus_seat_row_2">
            <div class="bus_seat"><input type="checkbox"/> 04</div>
@@ -373,9 +397,9 @@
        </div>
 
        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12 m-auto">
-          <a href="thank.html">
-            <button type="button" class="btn btn-primary green_btn mb-3" style="width: 100%; height: 55px;">PROCEED NOW</button>
-          </a>
+          <!-- <a href="thank.php"> -->
+            <button type="button" id="proceedBtn" class="btn btn-primary green_btn mb-3" style="width: 100%; height: 55px;">PROCEED NOW</button>
+          <!-- </a> -->
         </div>
 
        <hr>
@@ -458,6 +482,40 @@
     <script src="js/jquery-3.2.1.min.js"></script>
       <script src="js/popper.min.js" ></script> 
       <script src="js/bootstrap.min.js" ></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          const proceedButton = document.querySelector("#proceedBtn");
+          proceedButton.addEventListener("click", function() {
+              const selectedSeats = document.querySelectorAll("input[type='checkbox']:checked");
+              const selectedSeatNumbers = Array.from(selectedSeats).map(seat => seat.parentElement.textContent.trim());
+              // alert("test");
+              // Send AJAX request to PHP script
+              const xhr = new XMLHttpRequest();
+              // alert("test2");
+              xhr.open("POST", "process_booking.php", true);
+              // alert("test3");
+              xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+              xhr.onreadystatechange = function() {
+                  if (xhr.readyState === XMLHttpRequest.DONE) {
+                      if (xhr.status === 200) {
+                          // Success - Show success message or redirect
+                          // alert("Your booking is successful!");
+                          // Redirect to thank.php
+                          // window.location.href = "thank.php";
+                      } else if (xhr.status === 302) {
+                        window.location.href = "sign_up.php";
+                      }else {
+                          // Error handling
+                          alert("Error occurred while processing your booking.");
+                      }
+                  }
+              };
+              xhr.send("selectedSeats=" + JSON.stringify(selectedSeatNumbers));
+          });
+      });
+
+    </script>
 
   </body>
 </html>

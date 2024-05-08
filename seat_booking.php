@@ -8,6 +8,8 @@
 
   global $conn;
 
+ 
+
   $id = $_GET['id'];
 
   // Perform a SELECT query to fetch the bus details based on the schedule ID
@@ -99,8 +101,13 @@
             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
               
               <div class="d-grid gap-2 d-md-flex justify-content-md-end top_btn_set_div">
+                <?php if( $_SESSION['email'] == null) { ?>
                 <a href="register.php"><button type="button" class="btn btn-primary blue_white_btn">Sign Up</button></a>
                 <a href="sign_up.php"><button type="button" class="btn btn-primary blue_btn">Login</button></a>
+                <?php } else { ?>
+                  <a href="my_account.php"><button type="button" class="btn btn-primary magenta_btn"><img src="images/account.png" width="20px;">&nbsp;Hi.. <?php echo $first_name; ?></button></a>
+                  <a href="index.php"><button type="button" class="btn btn-primary blue_btn">Log Out</button></a>
+                <?php }  ?>
               </div>
 
             </div>
@@ -489,24 +496,21 @@
           proceedButton.addEventListener("click", function() {
               const selectedSeats = document.querySelectorAll("input[type='checkbox']:checked");
               const selectedSeatNumbers = Array.from(selectedSeats).map(seat => seat.parentElement.textContent.trim());
-              // alert("test");
+
               // Send AJAX request to PHP script
               const xhr = new XMLHttpRequest();
-              // alert("test2");
               xhr.open("POST", "process_booking.php", true);
-              // alert("test3");
               xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
               xhr.onreadystatechange = function() {
                   if (xhr.readyState === XMLHttpRequest.DONE) {
                       if (xhr.status === 200) {
-                          // Success - Show success message or redirect
-                          // alert("Your booking is successful!");
-                          // Redirect to thank.php
-                          // window.location.href = "thank.php";
+                          // Redirect to thank.php if booking is successful
+                          window.location.href = "thank.php";
                       } else if (xhr.status === 302) {
-                        window.location.href = "sign_up.php";
-                      }else {
-                          // Error handling
+                          // Redirect to sign_up.php if user is not logged in
+                          window.location.href = "sign_up.php";
+                      } else {
+                          // Error handling for other status codes
                           alert("Error occurred while processing your booking.");
                       }
                   }
@@ -514,6 +518,7 @@
               xhr.send("selectedSeats=" + JSON.stringify(selectedSeatNumbers));
           });
       });
+
 
     </script>
 

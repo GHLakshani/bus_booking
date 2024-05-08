@@ -9,14 +9,16 @@ include 'connection.php';
 // Function to verify login credentials
 function verifyLogin($email, $password) {
     global $conn;
-    $stmt = $conn->prepare("SELECT id, password FROM users WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id, first_name, email , password FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
-    $stmt->bind_result($user_id, $hashed_password);
+    $stmt->bind_result($user_id, $first_name, $email, $hashed_password);
     $stmt->fetch();
     if (password_verify($password, $hashed_password)) {
       // Set user_id in session
       $_SESSION['user_id'] = $user_id;
+      $_SESSION['user_email'] = $email;
+      $_SESSION['user_name'] = $first_name;
       return true; // Passwords match, login successful
     } else {
         return false; // Passwords don't match, login failed

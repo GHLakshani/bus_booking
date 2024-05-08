@@ -133,7 +133,7 @@ $conn = null;
               <div class="d-grid gap-2 d-md-flex justify-content-md-end top_btn_set_div">
                 <!-- ============== -->
                 <a href="my_account.php"><button type="button" class="btn btn-primary magenta_btn"><img src="images/account.png" width="20px;">&nbsp;Hi.. <?php echo $first_name; ?></button></a>
-                <a href="index.php"><button type="button" class="btn btn-primary blue_btn">Log Out</button></a>
+                <a href="logout.php"><button type="button" class="btn btn-primary blue_btn">Log Out</button></a>
               </div>
 
             </div>

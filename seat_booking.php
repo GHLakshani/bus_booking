@@ -7,7 +7,7 @@
   include 'connection.php';
 
   global $conn;
-
+  // echo $_SESSION['user_email']; exit();
  
 
   $id = $_GET['id'];
@@ -101,12 +101,12 @@
             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
               
               <div class="d-grid gap-2 d-md-flex justify-content-md-end top_btn_set_div">
-                <?php if( $_SESSION['email'] == null) { ?>
+                <?php if( $_SESSION['user_id'] == null) { ?>
                 <a href="register.php"><button type="button" class="btn btn-primary blue_white_btn">Sign Up</button></a>
                 <a href="sign_up.php"><button type="button" class="btn btn-primary blue_btn">Login</button></a>
                 <?php } else { ?>
-                  <a href="my_account.php"><button type="button" class="btn btn-primary magenta_btn"><img src="images/account.png" width="20px;">&nbsp;Hi.. <?php echo $first_name; ?></button></a>
-                  <a href="index.php"><button type="button" class="btn btn-primary blue_btn">Log Out</button></a>
+                  <a href="my_account.php"><button type="button" class="btn btn-primary magenta_btn"><img src="images/account.png" width="20px;">&nbsp;Hi.. <?php echo $_SESSION['user_name']; ?></button></a>
+                  <a href="logout.php"><button type="button" class="btn btn-primary blue_btn">Log Out</button></a>
                 <?php }  ?>
               </div>
 
@@ -203,6 +203,7 @@
 
          <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5">
            <div class="rounded shadow p-4" style="background-color: #eeeeee;">
+                  
               <p class="fst-italic mb-1">Duration : <?php echo $row['duration']; ?> Hours | <?php echo $row['bus_type']; ?> | <?php echo $row['schedule_date']; ?></p>
               <h1 class="sub_heading mb-3"><?php echo $row['route_from']; ?> to <?php echo $row['route_to']; ?></h1>
               <p class="mb-1">Time - <?php echo $row['departure_time']; ?></p>
@@ -249,6 +250,7 @@
        <div class="row m-auto mt-5 mb-5" style="justify-content: center;">
 
         <div style="width: 75px;"><img src="images/steering-wheel.png" width="60px" class="float-start"></div>
+        
 
         <div class="main_seat_row">
           <div class="bus_seat_row_3">
@@ -506,7 +508,7 @@
                       if (xhr.status === 200) {
                           // Redirect to thank.php if booking is successful
                           window.location.href = "thank.php";
-                      } else if (xhr.status === 302) {
+                      } else if (xhr.status === 404) {
                           // Redirect to sign_up.php if user is not logged in
                           window.location.href = "sign_up.php";
                       } else {

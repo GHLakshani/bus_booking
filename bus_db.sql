@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 08, 2024 at 02:42 PM
+-- Generation Time: May 08, 2024 at 05:09 PM
 -- Server version: 5.7.36
 -- PHP Version: 8.0.13
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `bus_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bookings`
+--
+
+DROP TABLE IF EXISTS `bookings`;
+CREATE TABLE IF NOT EXISTS `bookings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `seat_numbers` varchar(255) NOT NULL,
+  `bus_details` varchar(255) NOT NULL,
+  `booking_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`id`, `user_id`, `seat_numbers`, `bus_details`, `booking_date`) VALUES
+(1, 1, '39', 'Bus schedule ID: ', '2024-05-08 17:02:42');
 
 -- --------------------------------------------------------
 

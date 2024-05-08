@@ -117,9 +117,13 @@ $conn->close();
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
 
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end top_btn_set_div">
-                        <a href="register.php"><button type="button" class="btn btn-primary blue_white_btn">Sign
-                                Up</button></a>
-                        <a href="sign_up.php"><button type="button" class="btn btn-primary blue_btn">Login</button></a>
+                    <?php if( $_SESSION['user_id'] == null) { ?>
+                <a href="register.php"><button type="button" class="btn btn-primary blue_white_btn">Sign Up</button></a>
+                <a href="sign_up.php"><button type="button" class="btn btn-primary blue_btn">Login</button></a>
+                <?php } else { ?>
+                  <a href="my_account.php"><button type="button" class="btn btn-primary magenta_btn"><img src="images/account.png" width="20px;">&nbsp;Hi.. <?php echo $_SESSION['user_name']; ?></button></a>
+                  <a href="logout.php"><button type="button" class="btn btn-primary blue_btn">Log Out</button></a>
+                <?php }  ?>
                     </div>
 
                 </div>

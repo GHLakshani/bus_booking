@@ -121,7 +121,7 @@ include 'connection.php';
               
               <div class="d-grid gap-2 d-md-flex justify-content-md-end top_btn_set_div">
                 <!-- <button type="button" class="btn btn-primary blue_white_btn">How to Use Tracker</button> -->
-                <?php if( $_SESSION['user_id'] == null) { ?>
+                <?php if(!isset($_SESSION['user_id']) || $_SESSION['user_id'] === null) { ?>
                 <a href="register.php"><button type="button" class="btn btn-primary blue_white_btn">Sign Up</button></a>
                 <a href="sign_up.php"><button type="button" class="btn btn-primary blue_btn">Login</button></a>
                 <?php } else { ?>

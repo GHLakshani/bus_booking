@@ -26,7 +26,11 @@ if ($result->num_rows > 0) {
         $rows[] = $row;
     }  
 } else {
-    echo '0 results';
+    echo "<script>
+            if(confirm('No results found.')) {
+                window.location.href = 'index.php'; // Redirect to index.php
+            }
+          </script>";
     // echo "else";exit();
 }
 

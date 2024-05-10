@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   // Check file size
-  if ($_FILES["bus_image"]["size"] > 500000) {
+  if ($_FILES["bus_image"]["size"] > 50000000) {
       echo "Sorry, your file is too large.";
       $uploadOk = 0;
   }
@@ -61,17 +61,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $duration = mysqli_real_escape_string($conn, $_POST['duration']);
     $bus_type = mysqli_real_escape_string($conn, $_POST['bus_type']);
     $schedule_date = mysqli_real_escape_string($conn, $_POST['schedule_date']);
-    $image = mysqli_real_escape_string($conn, $_POST['bus_image']);
+    $image = mysqli_real_escape_string($conn, $_FILES["bus_image"]["name"]);
 
     // Insert data into database
     $sql = "INSERT INTO bus_schedule (schedule_id, route_from, route_to, departure_time, bus_model, depot_name, fare, available_seats, duration, bus_type, schedule_date,bus_image) 
-            VALUES ('$schedule_id', '$route_from', '$route_to', '$departure_time', '$bus_model', '$depot_name', '$fare', '$available_seats', '$duration', '$bus_type', '$schedule_date','$bus_image')";
+            VALUES ('$schedule_id', '$route_from', '$route_to', '$departure_time', '$bus_model', '$depot_name', '$fare', '$available_seats', '$duration', '$bus_type', '$schedule_date','$image')";
 
     if ($conn->query($sql) === TRUE) {
       // Display a success message using JavaScript
-      echo "<script>alert('Booking successful!');</script>";
-      // header("Location: thank.php");
-      exit();
+      echo "<script>
+            if(confirm('Booking successful!')) {
+                window.location.href = 'all_bookings.php'; // Redirect to index.php
+            }
+          </script>";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -252,7 +254,7 @@ $conn->close();
               
                 <h1 class="heading mb-4" data-aos="fade-up">Add New Bus</h1>
 
-                <form class="row" method="POST" action="add_bus.php">
+                <form class="row" method="POST" action="add_bus.php" enctype="multipart/form-data">
 
                   <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="form-floating mb-3" data-aos="fade-up">

@@ -218,7 +218,7 @@ $conn->close();
 
             <!-- add -->
             <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mb-3">
-                <img src="images/bus.jpg" alt="" class="d-block mx-auto w-100 rounded shadow">
+                <img src="<?php if($row['bus_image'] != ''){ ?>uploads/<?php echo $row['bus_image']; }else{ echo 'images/bus.jpg';} ?>" alt="" class="d-block mx-auto w-100 rounded shadow">
             </div>
 
             <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mb-5">

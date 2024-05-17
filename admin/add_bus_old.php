@@ -3,7 +3,7 @@
 session_start();
 
 // Include the connection file
-include 'connection.php';
+include '../connection.php';
 
 global $conn;
 

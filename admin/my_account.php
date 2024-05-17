@@ -3,7 +3,7 @@
 session_start();
 
 // Include the connection file
-include 'connection.php';
+include '../connection.php';
 
 try {
     global $conn;
@@ -65,8 +65,8 @@ $conn = null;
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 
-    <link href="css/bus_booking.css" rel="stylesheet">
-    <link href="css/mediaquery.css" rel="stylesheet">
+    <link href="../css/bus_booking.css" rel="stylesheet">
+    <link href="../css/mediaquery.css" rel="stylesheet">
 
     <title>Online Bus Seats Booking System</title>
 
@@ -170,7 +170,7 @@ $conn = null;
             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
 
              <div class="col" data-aos="fade-up" style="padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px solid #f5c481;">
-                <img src="images/logo.png" alt="" class="d-block top_logo">
+                <img src="../images/logo.png" alt="" class="d-block top_logo">
               </div>
 
               <div class="clearfix"></div>
@@ -179,7 +179,7 @@ $conn = null;
                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                </p>
 
-               <a href="add_bus.php"><button type="button" class="btn btn-primary magenta_btn mb-3"><img src="images/post.png" alt="" width="30px;"> &nbsp; POST YOUR ADD</button></a>
+               <!-- <a href="add_bus.php"><button type="button" class="btn btn-primary magenta_btn mb-3"><img src="../images/post.png" alt="" width="30px;"> &nbsp; POST YOUR ADD</button></a> -->
 
                <div class="clearfix"></div>
 
@@ -187,7 +187,7 @@ $conn = null;
 
              <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
 
-             <img src="images/find.png" alt="" class="img-fluid mx-auto d-block">
+             <img src="../images/find.png" alt="" class="img-fluid mx-auto d-block">
 
             </div>
 
@@ -227,9 +227,18 @@ $conn = null;
           <!-- ============== -->
 
 
-          <a href="all_bookings.php">
+          <a href="add_bus.php">
             <div class="left_side_btn_div">
-              My Bookings
+              Add Bus
+            </div>
+          </a>
+
+          <!-- ============== -->
+
+
+          <a href="bus_details.php">
+            <div class="left_side_btn_div">
+              Bus Details
             </div>
           </a>
 
@@ -478,11 +487,11 @@ $conn = null;
       <div class="row">
         
         <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12">
-          <div class="banner_div shadow rounded" style="background-image:url('images/banner01.jpg') !important;"></div>
+          <div class="banner_div shadow rounded" style="background-image:url('../images/banner01.jpg') !important;"></div>
         </div>
 
         <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
-          <div class="banner_div shadow rounded" style="background-image:url('images/banner02.jpg') !important;"></div>
+          <div class="banner_div shadow rounded" style="background-image:url('../images/banner02.jpg') !important;"></div>
         </div>
 
       </div>
@@ -507,7 +516,7 @@ $conn = null;
         
        <div class="row">
          
-        <img src="images/logo.png" alt="" class="d-block top_logo mx-auto mb-3"data-aos="fade-up">
+        <img src="../images/logo.png" alt="" class="d-block top_logo mx-auto mb-3"data-aos="fade-up">
 
        <p class="text-center" data-aos="fade-down">
          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <br>when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -536,9 +545,9 @@ $conn = null;
 
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-      <script src="js/popper.min.js" ></script> 
-      <script src="js/bootstrap.min.js" ></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+      <script src="../js/popper.min.js" ></script> 
+      <script src="../js/bootstrap.min.js" ></script>
 
   </body>
 </html>

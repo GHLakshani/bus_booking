@@ -3,7 +3,7 @@
 session_start();
 
 // Include the connection file
-include 'connection.php';
+include '../connection.php';
 
 global $conn;
 
@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       // Display a success message using JavaScript
       echo "<script>
             if(confirm('Booking successful!')) {
-                window.location.href = 'all_bookings.php'; // Redirect to index.php
+                window.location.href = 'bus_details.php'; // Redirect to index.php
             }
           </script>";
     } else {
@@ -94,8 +94,8 @@ $conn->close();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 
-    <link href="css/bus_booking.css" rel="stylesheet">
-    <link href="css/mediaquery.css" rel="stylesheet">
+    <link href="../css/bus_booking.css" rel="stylesheet">
+    <link href="../css/mediaquery.css" rel="stylesheet">
 
     <title>Online Bus Seats Booking System</title>
 
@@ -160,13 +160,9 @@ $conn->close();
             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
               
               <div class="d-grid gap-2 d-md-flex justify-content-md-end top_btn_set_div">
-                <?php if(!isset($_SESSION['user_id']) || $_SESSION['user_id'] === null) { ?>
-                  <a href="register.php"><button type="button" class="btn btn-primary blue_white_btn">Sign Up</button></a>
-                  <a href="sign_up.php"><button type="button" class="btn btn-primary blue_btn">Login</button></a>
-                <?php } else { ?>
-                  <a href="my_account.php"><button type="button" class="btn btn-primary magenta_btn"><img src="images/account.png" width="20px;">&nbsp;Hi.. <?php echo $_SESSION['user_name']; ?></button></a>
-                  <a href="logout.php"><button type="button" class="btn btn-primary blue_btn">Log Out</button></a>
-                <?php }  ?>
+                <!-- ============== -->
+                <a href="my_account.php"><button type="button" class="btn btn-primary magenta_btn"><img src="images/account.png" width="20px;">&nbsp;Hi.. <?php echo $first_name; ?></button></a>
+                <a href="logout.php"><button type="button" class="btn btn-primary blue_btn">Log Out</button></a>
               </div>
 
             </div>
@@ -203,7 +199,7 @@ $conn->close();
             <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
 
              <div class="col" data-aos="fade-up" style="padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px solid #f5c481;">
-                <img src="images/logo.png" alt="" class="d-block top_logo">
+                <img src="../images/logo.png" alt="" class="d-block top_logo">
               </div>
 
               <div class="clearfix"></div>
@@ -212,13 +208,15 @@ $conn->close();
                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                </p>
 
+               <!-- <a href="add_bus.php"><button type="button" class="btn btn-primary magenta_btn mb-3"><img src="../images/post.png" alt="" width="30px;"> &nbsp; POST YOUR ADD</button></a> -->
+
                <div class="clearfix"></div>
 
             </div>
 
              <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
 
-             <img src="images/find.png" alt="" class="img-fluid mx-auto d-block">
+             <img src="../images/find.png" alt="" class="img-fluid mx-auto d-block">
 
             </div>
 
@@ -243,17 +241,74 @@ $conn->close();
 
       <div class="row">
 
-        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-          <img src="images/house.png" alt="" class="d-block mx-auto w-100">
+        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12">
+
+          <h1 class="heading aos-init aos-animate" data-aos="fade-up">
+            ACCOUNT
+          </h1>
+          
+          <a href="">
+            <div class="left_side_btn_div">
+              Hi...<?php echo $_SESSION['user_name']; ?>
+            </div>
+          </a>
+
+          <!-- ============== -->
+
+
+          <a href="add_bus.php">
+            <div class="left_side_btn_div left_side_btn_div_active">
+              Add Bus
+            </div>
+          </a>
+
+          <!-- ============== -->
+
+
+          <a href="bus_details.php">
+            <div class="left_side_btn_div">
+              Bus Details
+            </div>
+          </a>
+
+          <!-- ============== -->
+
+          <a href="my_account.php">
+            <div class="left_side_btn_div ">
+              My Account
+            </div>
+          </a>
+
+          <!-- ============== -->
+
+          <!-- <a href="register.php">
+            <div class="left_side_btn_div">
+              Register
+            </div>
+          </a> -->
+
+          <!-- ============== -->
+<!-- 
+          <a href="forgot_password.php">
+            <div class="left_side_btn_div">
+              Forgotten Password
+            </div>
+          </a> -->
+
+          <!-- ============== -->
+
+
+
         </div>
 
-        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-          <div class="shadow rounded p-4">
-            
-            <div class="row">
-              
-                <h1 class="heading mb-4" data-aos="fade-up">Add New Bus</h1>
+        <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-8 col-sm-8 col-12">
+          
+          <h1 class="sub_heading aos-init aos-animate" data-aos="fade-up">
+          Add New Bus
+          </h1>
 
+          <div class="row mt-3 mb-4">
+              
                 <form class="row" method="POST" action="add_bus.php" enctype="multipart/form-data">
 
                   <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -359,7 +414,6 @@ $conn->close();
 
             </div>
 
-          </div>
         </div>
         
       </div>
@@ -382,11 +436,11 @@ $conn->close();
       <div class="row">
         
         <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12">
-          <div class="banner_div shadow rounded" style="background-image:url('images/banner01.jpg') !important;"></div>
+          <div class="banner_div shadow rounded" style="background-image:url('../images/banner01.jpg') !important;"></div>
         </div>
 
         <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
-          <div class="banner_div shadow rounded" style="background-image:url('images/banner02.jpg') !important;"></div>
+          <div class="banner_div shadow rounded" style="background-image:url('../images/banner02.jpg') !important;"></div>
         </div>
 
       </div>
@@ -401,6 +455,7 @@ $conn->close();
     <!--=============================================-->
   <!--===================body====================-->
 
+
   <!--=============================================-->
   <!--===================footer====================-->
 
@@ -410,7 +465,7 @@ $conn->close();
         
        <div class="row">
          
-        <img src="images/logo.png" alt="" class="d-block top_logo mx-auto mb-3"data-aos="fade-up">
+        <img src="../images/logo.png" alt="" class="d-block top_logo mx-auto mb-3"data-aos="fade-up">
 
        <p class="text-center" data-aos="fade-down">
          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <br>when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -439,9 +494,9 @@ $conn->close();
 
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-      <script src="js/popper.min.js" ></script> 
-      <script src="js/bootstrap.min.js" ></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+      <script src="../js/popper.min.js" ></script> 
+      <script src="../js/bootstrap.min.js" ></script>
 
   </body>
 </html>

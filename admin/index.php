@@ -4,7 +4,7 @@
 session_start();
 
 // Include the connection file
-include 'connection.php';
+include '../connection.php';
 
 // Function to verify login credentials
 function verifyLogin($email, $password) {
@@ -49,12 +49,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-
-    <link href="css/bus_booking.css" rel="stylesheet">
-    <link href="css/mediaquery.css" rel="stylesheet">
+    <link href="../css/bus_booking.css" rel="stylesheet">
+    <link href="../css/mediaquery.css" rel="stylesheet">
 
     <title>Online Bus Seats Booking System</title>
 
@@ -82,7 +80,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
     </style>
 
-
   </head>
   <body class="body_bg">
 
@@ -91,19 +88,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- header section -->
 
-
     <div class="container">
       
       <div class="row login_section_div">
         
-         
-
          <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12">
            
             <div class="shadow p-5 mb-1" data-aos="fade-down" style="background-color: #ffffff;">
 
               <div class="col" data-aos="fade-up" style="padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px solid #f5c481;">
-                <img src="images/logo.png" alt="" class="d-block top_logo">
+                <img src="../images/logo.png" alt="" class="d-block top_logo">
               </div>
 
               <div class="clearfix"></div>
@@ -115,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                <div class="clearfix"></div>
 
               <h1 class="heading mb-2"><b>LOGIN</b></h1>
-              <form method="POST" action="sign_up.php">
+              <form method="POST" action="index.php">
              
               <div class="row">
 
@@ -123,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   <div class="form-floating mb-3">
                     <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
                     <label for="floatingInput">Email</label>
-                    <img src="images/u_name.png" class="form_icon">
+                    <img src="../images/u_name.png" class="form_icon">
                   </div>
                 </div>
 
@@ -131,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                  <div class="form-floating mb-3">
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                     <label for="floatingPassword">Password</label>
-                    <img src="images/pass.png" class="form_icon">
+                    <img src="../images/pass.png" class="form_icon">
                   </div>
                 </div>
 
@@ -140,7 +134,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p style="text-align: right; font-weight: 700;"><a href="forgot_password.php" class="a_link">Forgot Password?</a></p>
 
                 <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                   <!-- <a href="login_dash.html"><button type="button" class="btn btn-primary green_btn" style="width: 100%; font-weight: 900; height: 55px;"><span class="align-middle">LOGIN NOW</span></button></a> -->
                    <button type="submit" name="login" class="btn btn-primary green_btn" style="width: 100%; font-weight: 900; height: 55px;"><span class="align-middle">LOGIN NOW</span></button>
                 </div>
 
@@ -163,7 +156,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12 d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block">
             <br>
             <br>
-            <img src="images/house.png" alt="" class="img-fluid mx-auto d-block">
+            <img src="../images/house.png" alt="" class="img-fluid mx-auto d-block">
 
          </div>
 
@@ -173,7 +166,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     </div>
 
-
     <!-- header section -->
 
     <!--=============================================-->
@@ -181,9 +173,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-      <script src="js/popper.min.js" ></script> 
-      <script src="js/bootstrap.min.js" ></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/popper.min.js" ></script> 
+    <script src="../js/bootstrap.min.js" ></script>
 
   </body>
 </html>

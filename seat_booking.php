@@ -473,7 +473,7 @@
           <a href="" target="_blank" data-aos="fade-right" data-aos-duration="1100" class="fa fa-linkedin aos-init aos-animate"></a>
         </p>
 
-        <p class="mb-0" style="text-align: center; font-weight: 500; color: #999999;">Copyright © 2023 FINDER All Rights Reserved. <br>Solution by Lakshan Basnayaka</p>
+        <p class="mb-0" style="text-align: center; font-weight: 500; color: #999999;">Copyright © 2024 BusGoes All Rights Reserved. <br>Solution by Lakshan Basnayaka</p>
 
        </div>
 

@@ -110,12 +110,12 @@ $result = $conn->query($sql);
             </div>
           </a>
           <a href="add_bus.php">
-            <div class="left_side_btn_div left_side_btn_div_active">
+            <div class="left_side_btn_div ">
               Add Bus
             </div>
           </a>
           <a href="bus_details.php">
-            <div class="left_side_btn_div">
+            <div class="left_side_btn_div left_side_btn_div_active">
               Bus Details
             </div>
           </a>

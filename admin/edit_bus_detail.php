@@ -287,7 +287,7 @@ $conn->close();
 
 
           <a href="add_bus.php">
-            <div class="left_side_btn_div left_side_btn_div_active">
+            <div class="left_side_btn_div ">
               Add Bus
             </div>
           </a>
@@ -296,7 +296,7 @@ $conn->close();
 
 
           <a href="bus_details.php">
-            <div class="left_side_btn_div">
+            <div class="left_side_btn_div left_side_btn_div_active">
               Bus Details
             </div>
           </a>
